@@ -1,0 +1,443 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo&family=Inter&display=swap");
+@import url("https://www.tailwindcss-animated.com/configurator.html?animation=flip-up&count=once&duration=1000&ease=ease-in-out");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+
+
+.navbar {
+  background-color: rgb(205, 21, 71) !important;
+  font-family: "Exo", sans-serif !important;
+  font-weight: 600;
+}
+
+.navbar-brand {
+  color: #fff;
+}
+
+.navbar-brand img {
+  margin-bottom: 5px;
+}
+
+.navbar-toggler {
+  filter: invert(1);
+}
+
+.nav-link {
+  color: #fff !important;
+  align-items: center;
+  margin-right: 10px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: inset 0 -3px 4px rgba(0, 0, 0, 0.5),
+    0 -1px 2px rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.nav-link.active {
+  color: #fff !important;
+  transition: all 0.2s ease-in-out;
+  box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:hover,
+.nav-link.active:hover {
+  box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:active,
+.nav-link.active:active {
+  box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#newsSection {
+  padding: 100px 15px 180px 15px;
+}
+
+#newsSectionHeader {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#newsSectionHeader span {
+  font-size: 22px;
+  display: flex;
+  font-family: Exo, sans-serif;
+  font-weight: 400;
+  line-height: normal;
+  word-wrap: break-word;
+  margin: 30px 10px 20px 10px;
+}
+
+.sortBtn {
+  background-color: rgb(205, 21, 71);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sortBtn:hover {
+  background-color: rgb(148, 15, 50);
+}
+
+.sortBtn:active {
+  background-color: rgb(126, 13, 43);
+}
+
+/* Optional: Add some spacing between buttons for better visual appeal */
+.sortBtn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.card-grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-wrap {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+@media (min-width: 500px) {
+  .card-wrap {
+    width: 50%;
+  }
+}
+@media (min-width: 720px) {
+  .card-wrap {
+    width: 25%;
+  }
+}
+@media (min-width: 1720px) {
+  .card-wrap {
+    width: 350px;
+  }
+  .card-grid {
+    justify-content: center;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Hide content that overflows the container */
+}
+
+.card > div {
+  padding: 0 1em;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.card p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit the number of lines */
+  -webkit-box-orient: vertical;
+}
+
+.miniInfo {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0px 4px 0px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+#newsGenre {
+  order: 1; /* Order 1 will be on the left */
+  font-size: 14px;
+  color: rgb(60, 60, 60);
+}
+
+#newsDate {
+  order: 2; /* Order 2 will be on the right */
+  font-size: 12px;
+  color: grey;
+  line-height: 1.5;
+}
+
+.infoContent {
+  font-size: 16px;
+  font-family: Exo, sans-serif;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+#emailSubscribe {
+  position: relative;
+  height: 300px;
+  background-color: #019dd1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emailSubscribeForm {
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+}
+
+.emailForm {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.emailForm input {
+  width: 70%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.emailForm button {
+  width: 30%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #019dd1;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.emailForm button:hover {
+  background-color: #000;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+  .emailForm button {
+    width: 30%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #019dd1;
+    border: none;
+    cursor: pointer;
+    
+  }
+ 
+  
+}
+
+#logosSponsor {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.logosSponsorContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.logosSponsorContainer img {
+  max-width: 80%;
+  height: auto;
+  margin: 10px;
+}
+
+/* Media query for smaller screens (adjust the max-width as needed) */
+@media (max-width: 768px) {
+  .logosSponsorContainer img {
+    max-width: 40%;
+  }
+}
+
+footer {
+  background-color: rgb(216, 217, 216);
+  color: rgb(0, 0, 0);
+  padding: 20px 0;
+  position: relative;
+  font-family: "Exo", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-content {
+  text-align: left;
+}
+
+.footer-content h3 {
+  color: #000000;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .footer-content h3 {
+    font-size: 20px;
+    
+  }
+
+  .footer-content p {
+    font-size: 16px;
+  }
+
+  .footer-container {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+.footerLogo {
+  filter: invert(1);
+  translate: 0px -2px;
+  cursor: pointer;
+}
+
+.termsConditions,
+.privacy {
+  translate: 0 20px;
+  position: relative;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.socialLogos img {
+  width: 25px;
+  translate: 60px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.footerAddress {
+  text-align: right;
+}
+
+.navBoton {
+  position: absolute;
+  right: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  width: 140px;
+  background-color: rgb(255, 255, 255);
+  color: #000 !important;
+  transition: all ease-in-out 0.1s;
+  box-shadow: inset 0 -3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navBoton:hover {
+  box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navBoton:active {
+  background-color: #000;
+  color: #fff !important;
+}
+
+@media (max-width: 991px) {
+  .navBoton {
+    position: relative;
+    border-radius: 0px;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+}
+
+.hiddenSort {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  /* Show buttons on larger screens */
+  .allSortBtn {
+    display: block;
+  }
+
+  /* Hide dropdown on larger screens */
+  .allSortBtnDropdown {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Hide buttons on smaller screens */
+  .allSortBtn {
+    display: none;
+  }
+
+  /* Show dropdown on smaller screens */
+  .allSortBtnDropdown {
+    display: block;
+  }
+}
+
+.allSortBtnDropdown {
+  position: relative;
+  width: 100%;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none; /* Remove default arrow icon in Firefox */
+  -webkit-appearance: none; /* Remove default arrow icon in Chrome/Safari/Edge */
+  background-color: #fff;
+  cursor: pointer;
+}
+
+select option {
+  background-color: #fff;
+}
+
+.allSortBtnDropdown::after {
+  content: "\25BC"; /* Unicode character for the down arrow */
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+

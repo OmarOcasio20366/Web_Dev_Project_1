@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestiCine - Planes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./stylePlanes.css" />
+    <script src="https://kit.fontawesome.com/7145270621.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./images/Cine.png" alt="Logo" width="30" height="24">
+                FestiCine</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./program.html">Programa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./news.html">Noticias</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Planes</a>
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link active navBoton" aria-current="page" href="#heroSection3"><strong>Obtener Tickets</strong></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="heroSection3">
+        <div class="heroStuff3">
+            <h1 class="titleHero">Planes</h1>
+            <span class="titleHeroText">Elige tu experiencia <strong>Festicine</strong></span>
+        </div>
+
+        <div class="card-grid">
+            <div class="card-wrap" data-tag="allDay">
+                <div class="card">
+                    <div class="grinfoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">All Day</span>
+                            <span id="newsDate">US$ 19.99</span>
+                        </div>
+                    </div>
+                    <div class="infoContent">
+                        <ul>
+                            <li>Acceso todos los films del dia seleccionado</li>
+                            <li>Poster del festival</li>
+                        </ul>
+                    </div>
+                    <div class="btnContent">
+                        <button class="getPrice greyBtn" onclick="purchaseAllDay();">Comprar</button><!--cada boton de compra lleva su propia funcion-->
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrap" data-tag="allDay">
+                <div class="card blueCard">
+                    <div class="grinfoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Full Access</span>
+                            <span id="newsDate">US$ 99.99</span>
+                        </div>
+                    </div>
+                    <div class="infoContent">
+                        <ul>
+                            <li>Acceso a mas de 30 films</li>
+                            <li>Pipocas gratis en cada funcion</li>
+                            <li>Poster y souvenirs del festival</li>
+                        </ul>
+                    </div>
+                    <div class="btnContent">
+                        <button class="getPrice" onclick="purchaseFullAccess();">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrap" data-tag="allDay">
+                <div class="card">
+                    <div class="grinfoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Personalizado</span>
+                            <span id="newsDate">US$ 10.50 / film</span>
+                        </div>
+                    </div>
+                    <div class="infoContent">
+                        <ul>
+                            <li>Selecciona tus films</li>
+                            <li>US$ 10.50 / ticket en función nocturna</li>
+                            <li>US$ 9.00 / ticket en matiné</li>
+                        </ul>
+                    </div>
+                    <div class="btnContent">
+                        <button class="getPrice greyBtn" onclick="purchasePersonalizado();">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="emailSubscribe">
+        <div class="emailSubscribeForm">
+            <h1>¡Cine en tu inbox!</h1>
+            <p>Subscribete y se el primero en enterarte de las ultimas noticias, peliculas destacadas y eventos
+                especiales de nuestro emocionante festival de cine.</p>
+            <form class="emailForm" role="subscribe" onsubmit="submitForm(event);">
+                <input class="form-control me-2" type="email" name="email" id="emailInput"
+                    placeholder="Ingresa tu email" aria-label="Subscribe">
+                <button class="btn btn-outline-success" type="submit">¡Quiero estar informado!</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="logosSponsor">
+        <h5>FestiCine llega a ti gracias a:</h5>
+        <div class="logosSponsorContainer">
+            <img src="./images/coke.png" alt="Coca Cola logo" />
+            <img src="./images/nyt.png" alt="The New York Times logo" />
+            <img src="./images/warner.png" alt="Warner Bros logosSponsor" />
+            <img src="./images/popcorn.png" alt="ACI II logo" />
+            <img src="./images/discovery.png" alt="Discovery logo" />
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3><img class="footerLogo" src="./images/Cine.png" alt="Logo" />&nbsp;FestiCine</h3>
+                <p class="termsConditions">Terminos y Condiciones</p>
+                <p class="privacy">Privacidad</p>
+            </div>
+            <div class="footer-content">
+                <p class="footerAddress">Avenida Salamanca #1223 [Zona Norte]<br /> Cochabamba Bolivia</p>
+                <hr />
+                <div class="socialLogos">
+                    <img src="./images/facebook 1.png" alt="" />
+                    <img src="./images/Instagram.png" alt="" />
+                    <img src="./images/youtube.png" alt="" />
+                    <img src="./images/Tiktok.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+        function purchaseAllDay() {
+            swal({
+                title: "All Day",
+                text: "US$ 19.99",
+                icon: "info",
+                buttons: true,
+                cancel: true,
+                confirm: true,
+                cancelText: "Cancelar",
+                confirmText: "Comprar",
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("¡Gracias por completar su compra!", "Seleccion: Paquete All Day", "¡Vuelva pronto!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("¡Supedido ha sido cancelado exitosamenmte!", "¡Hasta luego!", {
+                            icon: "error",
+                        });
+                    }
+                });
+        }
+
+        function purchaseFullAccess() {
+            swal({
+                title: "Full Access",
+                text: "US$ 99.99",
+                icon: "info",
+                buttons: true,
+                cancel: true,
+                confirm: true,
+                cancelText: "Cancelar",
+                confirmText: "Comprar",
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("¡Gracias por completar su compra!", "Seleccion: Paquete Full Access", "¡Vuelva pronto!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("¡Supedido ha sido cancelado exitosamenmte!", "¡Hasta luego!", {
+                            icon: "error",
+                        });
+                    }
+                });
+        }
+
+        function purchasePersonalizado() {
+            swal({
+                title: "Personalizado",
+                text: "US$ 10.50 / Film",
+                icon: "info",
+                buttons: true,
+                cancel: true,
+                confirm: true,
+                cancelText: "Cancelar",
+                confirmText: "Comprar",
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("¡Gracias por completar su compra!", "Seleccion: Paquete Personalizado", "¡Vuelva pronto!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("¡Supedido ha sido cancelado exitosamenmte!", "¡Hasta luego!", {
+                            icon: "error",
+                        });
+                    }
+                });
+        }
+
+        function emailConfirm(messageTitle, messageText) {
+            swal({
+                title: messageTitle,
+                text: messageText,
+                icon: "success",
+                timer: 5000,
+                buttons: false
+            });
+        }
+
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the entered email
+            var emailInput = document.getElementById("emailInput");
+            var enteredEmail = emailInput.value;
+
+            // Define your custom title and text based on the entered email
+            var customTitle = "¡Te has suscrito!";
+            var customText = "¡Ahora serás el primero en enterarte de las últimas noticias, películas destacadas y eventos especiales de nuestro emocionante festival de cine! Tu correo: " + enteredEmail;
+
+            // Call the emailConfirm function with the custom title and text
+            emailConfirm(customTitle, customText);
+        }
+
+    </script>
+
+</body>
+
+</body>
+
+</html>

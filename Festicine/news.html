@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FestiCine - News</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./styleNews.css" />
+    <script src="https://kit.fontawesome.com/7145270621.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./images/Cine.png" alt="Logo" width="30" height="24">
+                FestiCine</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./program.html">Programa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#newsSection">Noticias</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="./planes.html">Planes</a>
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link navBoton" href="./planes.html">Obtener Tickets</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="newsSection">
+        <div id="newsSectionHeader">
+            <span><strong>Noticias</strong></span>
+            <div class="allSortBtn"><!--Sorter para pc-->
+                <button class="sortBtn" onclick="showAllCards()">Mostrar Todo</button>
+                <button class="sortBtn" onclick="filterCards('noticias')">Documental</button>
+                <button class="sortBtn" onclick="filterCards('ultimoMinuto')">Ultima Noticia</button>
+                <button class="sortBtn" onclick="filterCards('entrevistas')">Entrevistas</button>
+                <button class="sortBtn" onclick="filterCards('critica')">Críticas</button>
+                <button class="sortBtn" onclick="filterCards('informacion')">Chisme</button>
+                <button class="sortBtn" onclick="filterCards('resenas')">Reseñas</button>
+            </div>
+
+            <!-- Para Mobiles -->
+            <div class="allSortBtnDropdown" id="dropdownContainer"><!--Sorter para mobile-->
+                <select id="dropdownSelect" onchange="handleDropdownChange()">
+                    <option value="showAll">Mostrar Todo</option>
+                    <option value="noticias">Documental</option>
+                    <option value="ultimoMinuto">Ultima Noticia</option>
+                    <option value="entrevistas">Entrevistas</option>
+                    <option value="critica">Críticas</option>
+                    <option value="informacion">Chisme</option>
+                    <option value="resenas">Reseñas</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-grid">
+            <div class="card-wrap" data-tag="entrevistas">
+                <div class="card">
+                    <img src="./images/anakin.png" class="card-img" alt="Ashoka Picture" />
+                    <div class="infoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Entrevistas</span>
+                            <span id="newsDate">08/06/2023</span>
+                        </div>
+                        <p><strong>Creador de la serie Ashoka nos habla de su proceso
+                                creativo...
+                            </strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrap" data-tag="critica">
+                <div class="card">
+                    <img src="./images/barbie.png" class="card-img" alt="Barbie Movie Picture" />
+                    <div class="infoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Critica</span>
+                            <span id="newsDate">07/11/2023</span>
+                        </div>
+                        <p><strong>Barbie rompe estigma sobre el ambiente laboral para las mujeres y hombres...</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrap" data-tag="entrevistas">
+                <div class="card">
+                    <img src="./images/oldman.png" class="card-img" alt="Martin Scorsese Picture" />
+                    <div class="infoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Entrevista</span>
+                            <span id="newsDate">08/01/2023</span>
+                        </div>
+                        <p><strong>Martin Scorsese comenta el estado del cinema "No que el colapso llegue sin
+                                aviso"...</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrap" data-tag="ultimoMinuto">
+                <div class="card">
+                    <img src="./images/motherDaughter.png" class="card-img" alt="A.I Generated Image" />
+                    <div class="infoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Ultimo minuto</span>
+                            <span id="newsDate">08/10/2023</span>
+                        </div>
+                        <p><strong>A.I: Remplaza actores de cine o innova la industria del cine...</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrap" data-tag="noticias">
+                <div class="card">
+                    <img src="./images/friends.png" class="card-img" alt="Friends Serie Image" />
+                    <div class="infoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Noticias</span>
+                            <span id="newsDate">08/08/2023</span>
+                        </div>
+                        <p><strong>Elenco de Friends comenta en una posible reunion para el 2024...</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrap" data-tag="resenas">
+                <div class="card">
+                    <img src="./images/asian.png" class="card-img" alt="Asian Couple Image" />
+                    <div class="infoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Reseña</span>
+                            <span id="newsDate">08/07/2023</span>
+                        </div>
+                        <p><strong>Pelicula Koreana habla sobre Neurodivergencia, "Neurons" en U.K....</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrap" data-tag="informacion">
+                <div class="card">
+                    <img src="./images/williwonka.png" class="card-img" alt="Wagner Bros Celebrities Image" />
+                    <div class="infoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Informacion</span>
+                            <span id="newsDate">08/22/2023</span>
+                        </div>
+                        <p><strong>Ejecutivos de Warner Bros piensan vender sus acciones a Wall Streets...</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-wrap" data-tag="collecion">
+                <div class="card">
+                    <img src="./images/thenun.png" class="card-img" alt="Conjuring Movie Image" />
+                    <div class="infoContent">
+                        <div class="miniInfo">
+                            <span id="newsGenre">Collecion</span>
+                            <span id="newsDate">08/24/2023</span>
+                        </div>
+                        <p><strong>El mundo de Conjuring trae mas innovadoras peliculas de terror para ver...</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="emailSubscribe">
+        <div class="emailSubscribeForm">
+            <h1>¡Cine en tu inbox!</h1>
+            <p>Subscribete y se el primero en enterarte de las ultimas noticias, peliculas destacadas y eventos
+                especiales de nuestro emocionante festival de cine.</p>
+            <form class="emailForm" role="subscribe" onsubmit="submitForm(event);">
+                <input class="form-control me-2" type="email" name="email" id="emailInput"
+                    placeholder="Ingresa tu email" aria-label="Subscribe">
+                <button class="btn btn-outline-success" type="submit">¡Quiero estar informado!</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="logosSponsor">
+        <h5>FestiCine llega a ti gracias a:</h5>
+        <div class="logosSponsorContainer">
+            <img src="./images/coke.png" alt="Coca Cola logo" />
+            <img src="./images/nyt.png" alt="The New York Times logo" />
+            <img src="./images/warner.png" alt="Warner Bros logosSponsor" />
+            <img src="./images/popcorn.png" alt="ACI II logo" />
+            <img src="./images/discovery.png" alt="Discovery logo" />
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3><img class="footerLogo" src="./images/Cine.png" alt="Logo" />&nbsp;FestiCine</h3>
+                <p class="termsConditions">Terminos y Condiciones</p>
+                <p class="privacy">Privacidad</p>
+            </div>
+            <div class="footer-content">
+                <p class="footerAddress">Avenida Salamanca #1223 [Zona Norte]<br /> Cochabamba Bolivia</p>
+                <hr />
+                <div class="socialLogos">
+                    <img src="./images/facebook 1.png" alt="" />
+                    <img src="./images/Instagram.png" alt="" />
+                    <img src="./images/youtube.png" alt="" />
+                    <img src="./images/Tiktok.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./newspageSorter.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function emailConfirm(messageTitle, messageText) {
+            swal({
+                title: messageTitle,
+                text: messageText,
+                icon: "success",
+                timer: 5000,
+                buttons: false
+            });
+        }
+
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the entered email
+            var emailInput = document.getElementById("emailInput");
+            var enteredEmail = emailInput.value;
+
+            // Define your custom title and text based on the entered email
+            var customTitle = "¡Te has suscrito!";
+            var customText = "¡Ahora serás el primero en enterarte de las últimas noticias, películas destacadas y eventos especiales de nuestro emocionante festival de cine! Tu correo: " + enteredEmail;
+
+            // Call the emailConfirm function with the custom title and text
+            emailConfirm(customTitle, customText);
+        }
+    </script>
+
+</body>
+
+</html>
